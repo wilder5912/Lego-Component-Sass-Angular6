@@ -1,0 +1,31 @@
+<div>
+    <h1 class="centerTitle color-text">
+      login
+    </h1>
+  <div class="">
+    <form novalidate [formGroup]="form"  #f="ngForm">
+    <div class="form-group col-lg-6 margiForm" >
+      <label class="color-text">User</label>
+      <input type="text" formControlName="userData" class="form-control" />
+
+      <div *ngIf="form.controls.userData.errors">
+        <div *ngIf="form.controls.userData.errors.required && form.controls.userData.dirty" class="alert alert-danger">
+          Field Requered
+        </div>
+      </div>
+    </div>
+    <div class=" form-group col-lg-6 margiForm">
+      <label class="color-text">Password</label>
+      <input type="password" formControlName="passwordData" class="form-control" />
+      <div *ngIf="form.controls.passwordData.errors">
+        <div *ngIf="form.controls.passwordData.errors.required && form.controls.passwordData.dirty" class="alert alert-danger">
+          Password Requered
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-lg-6 margiForm margin-booton">
+      <button  class="btn btn-danger " (click)="loginUser()" > Register</button>
+    </div>
+    </form>
+  </div>
+</div>
